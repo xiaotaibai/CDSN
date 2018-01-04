@@ -34,10 +34,19 @@ public class CdsnUntil {
 	      System.out.println(strArray.length);
 	      
 	  	List<String> list =new ArrayList<String>();
-      
+	  	Thread th=new Thread();
 		for(int i=0;i<strArray.length-1;i++){
-			String runUrl=strArray[i];
-			URL url=new URL(runUrl);
+
+			
+			try {
+				String runUrl=strArray[i];
+				System.out.println(runUrl);
+				URL url=new URL(runUrl);
+				th.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO 自动生成的 catch 块
+				e.printStackTrace();
+			}
 			System.out.println("运行次数"+i);
 //--------------------------------------------------------测试访问---------------------			
 //			BufferedReader bufIn=new BufferedReader(new InputStreamReader(url.openStream()));
