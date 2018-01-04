@@ -1,20 +1,15 @@
 package com.taibai.demo;
 
-import java.io.BufferedReader;
-
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import org.apache.http.client.HttpClient;
+
 
 
 /**
@@ -69,7 +64,7 @@ public class CdsnUntil {
 					System.out.println("访问成功");
 				}
 
-				th.sleep(100);  //害怕访问太快，给禁用IP了，推荐1000，一秒一次呀
+				th.sleep(1000);  //害怕访问太快，给禁用IP了，推荐1000，一秒一次呀
 
 			} catch (InterruptedException e) {
 				// TODO 自动生成的 catch 块
@@ -94,6 +89,7 @@ public class CdsnUntil {
 			// }
 		}
 		System.out.println("访问结束");
+		th.destroy();
 		// ----------------------------------------------------------------------------------------
 		return list;
 	}
